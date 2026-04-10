@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-// TODO: Replace placeholder values with actual student and lab identifiers
+// TODO: Replac
+// e placeholder values with actual student and lab identifiers
 const STUDENT_ID = 'STUDENT_ID_PLACEHOLDER';
 const LAB_ID = 'LAB_ID_PLACEHOLDER';
 
