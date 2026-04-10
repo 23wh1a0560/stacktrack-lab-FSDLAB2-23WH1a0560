@@ -1,18 +1,18 @@
 import React, {useEffect, useState} from 'react';
-import {useSearchParamas} from
+import {useSearchParams} from 'react-router-dom';
 
 // TODO: Import any API functions you need from '../../api/client'
 // Example: import { get, post } from '../../api/client';
 
 function QuestionComponent() {
   // TODO: Define state variables needed for your question set
-  const [searchParams, setSearchParams] = useSearchParamas();
-  const [keyword, setKeyword] = useState(searchParams.get('keyword') || '');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [keyword, setKeyword] = useState(searchParams.get('search') || '');
   const [tasks, setTasks] = useState([]);
   useEffect(() => {
     const key = searchParams.get('search') || '';
     if (key) {
-      fetch('/api/tasks?search==${key}')
+      fetch(`/api/tasks?search=${key}`)
       .then((response) => response.json())
       .then((data) => setTasks(data))
     }
@@ -34,7 +34,7 @@ function QuestionComponent() {
       <ul>
         {tasks.map((task) => (
           <li key={task.id}>
-            {task.name} - {task.description} - {task.status}
+            {task.title} - {task.description} - {task.status}
             </li>
         ))}
       </ul>
