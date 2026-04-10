@@ -4,8 +4,12 @@ import QuestionComponent from '../components/question/QuestionComponent';
 function QuestionPage() {
   return (
     <div>
-      <h1>Question Page</h1>
-      <QuestionComponent />
+      <div style = {{padding: "20px", fontFamily: "Arial"}}>
+        <h1 style={{marginBottom: "20px"}}>Question Page</h1>
+        <div style={{border: "1px solid #ccc", borderRadius: "5px", padding: "20px"}}>
+          <QuestionComponent />
+        </div>
+      </div>
     </div>
   );
 }
